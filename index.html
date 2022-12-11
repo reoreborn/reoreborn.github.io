@@ -64,6 +64,59 @@
         <br><br>
 
         <img src="files/cat.gif" style="float:left">
+            
+            <br>
+            Any feedbacks :) 
+            <form>
+  <textarea></textarea>
+  <button>Send</button>
+</form>
+
+
+<script>
+  // Get the form element
+  const form = document.querySelector('form');
+
+  // Handle the form submission
+  form.addEventListener('submit', event => {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Get the message from the textarea
+    const message = form.querySelector('textarea').value;
+
+    // Post the message to the Discord channel using the webhook URL
+    postMessageToDiscord(message);
+  });
+
+  // Function to post a message to the Discord channel
+  function postMessageToDiscord(message) {
+    // TODO: Implement this function
+  }
+// Function to post a message to the Discord channel
+function postMessageToDiscord(message) {
+  // The webhook URL
+  const webhookURL = 'https://discord.com/api/webhooks/947457900358565888/-0Tuju1kqYoPGHZ8LE-W61jVNQIQ0eThRo9NO3nz27BMfFj3A4yHkl0MDkJqNVoyQ5IQ';
+
+  // The data to send in the request body
+  const data = {
+    content: message,
+  };
+
+  // Send the request
+  fetch(webhookURL, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
+
+</script>
+
+            <br>
 
         <center><p>© Copyright 2022 REOREBORN ESPORTS. All rights reserved.</p></center>
 
